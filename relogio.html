@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(30, 30, 32);
+            margin: auto;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }#Datehour{
+            font-size: clamp(30px,14vw, 235px);
+            margin-top: calc(50% - 32%);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body id="back">
+    <div id="Datehour">
+        <label for=""></label>
+    </div>
+    <script>
+        function relogio(){
+            var data=new Date();
+            var hor=data.getHours();
+            var min=data.getMinutes();
+            var seg=data.getSeconds();
+            if(hor < 10){
+                hor="0"+hor;
+            }
+            if(min < 10){
+                min="0"+min;
+            }
+            if(seg < 10){
+                seg="0"+seg;
+            }
+            var horas=hor + ":" + min + ":" + seg;
+            document.getElementById("Datehour").innerHTML=horas;
+        }
+        var timer=setInterval(relogio,1000);
+        </script>
+        
+</body>
+</html>
